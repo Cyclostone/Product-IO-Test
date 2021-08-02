@@ -220,11 +220,17 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(fontSize: 20),
                       ),
                     ),
-                    const InputWithIcon(),
+                    InputWithIcon(
+                      icon: Icons.email,
+                      hintText: 'Enter Email',
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const InputWithIcon(),
+                    InputWithIcon(
+                      icon: Icons.password_outlined,
+                      hintText: 'Enter Password',
+                    ),
                   ],
                 ),
                 Column(
@@ -260,6 +266,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
@@ -269,6 +276,17 @@ class _LoginPageState extends State<LoginPage> {
                         'Create a New Account',
                         style: TextStyle(fontSize: 20),
                       ),
+                    ),
+                    InputWithIcon(
+                      icon: Icons.email,
+                      hintText: 'Enter Email',
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    InputWithIcon(
+                      icon: Icons.password_outlined,
+                      hintText: 'Enter Password',
                     ),
                   ],
                 ),
@@ -296,7 +314,10 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class InputWithIcon extends StatefulWidget {
-  const InputWithIcon({Key? key}) : super(key: key);
+  var icon;
+  String hintText;
+
+  InputWithIcon({this.icon, required this.hintText});
 
   @override
   _InputWithIconState createState() => _InputWithIconState();
@@ -318,7 +339,7 @@ class _InputWithIconState extends State<InputWithIcon> {
           Container(
             width: 60,
             child: Icon(
-              Icons.email,
+              widget.icon,
               size: 20,
               color: Color(0xffbb9b9b9),
             ),
@@ -327,7 +348,7 @@ class _InputWithIconState extends State<InputWithIcon> {
             child: TextField(
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(vertical: 20),
-                hintText: 'Enter Email...',
+                hintText: widget.hintText,
               ),
             ),
           ),
