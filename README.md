@@ -1,6 +1,6 @@
-# Cat_Dog_Classifier
+# Product-IO-Test
 
-This is a Flutter Application that uses Tensorflow lite to classify the uploaded asset as cat or dog, i.e. from Device Camera or Gallery
+This Project is a flutter application given as an assignment by Product-IO consisting of the login, signup and relevant animation.
 
 ![Animations](demo/video2.gif)
 ![SignUp Page Working](demo/video1.gif)
